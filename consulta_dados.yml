@@ -5,6 +5,14 @@
       command: sh /home/matheus/consulta_dados.sh
       register: data
     
+    - name: Consulta Banco
+      command: sh /home/matheus/busca_banco.sh
+      register: data_banco
+      
     - name: dados
       debug: 
         var: data.stdout
+
+    - name: banco
+      debug: 
+        var: data_banco.stdout

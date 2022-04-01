@@ -8,6 +8,7 @@
       until: result.stdout.find("Terminal em uso") != -1
       retries: 2
       delay: 5
+      ignore_errors: yes
     
     - debug:
         msg: "TERMINAL EM MANUTENÇÃO"

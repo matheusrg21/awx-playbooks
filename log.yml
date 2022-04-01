@@ -20,7 +20,7 @@
       register: result
       until: result.stdout.find("Terminal em uso") != -1
       retries: 5
-      delay: 10
+      delay: 2
       
     - debug:
-        msg: "Terminal em uso"
+        msg: "TERMINAL EM MANUTENÇÃO"

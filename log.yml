@@ -5,7 +5,7 @@
     - name: Wait until the string "completed" is in the file /tmp/foo before continuing
       wait_for:
         path: ~/test.log
-        search_regex: "Terminal em uso"
+        search_regex: "Terminal em uso$"
 
     
     - name: Wait feel seconds

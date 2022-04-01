@@ -5,7 +5,7 @@
     - name: Retry a task until a certain condition is met
       command: tail -f /home/matheus/test.log
       register: result
-      until: result.stdout.find("Terminal em uso") != -1
+      until: result.stdout.find("Terminal em uso")
       retries: 5
       delay: 2
       

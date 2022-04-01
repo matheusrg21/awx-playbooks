@@ -6,8 +6,8 @@
       command: tail -n 1 /home/matheus/test.log
       register: result
       until: result.stdout.find("Terminal em uso") != -1
-      retries: 5
-      delay: 2
+      retries: 20
+      delay: 5
       
     - debug:
         msg: "TERMINAL EM MANUTENÇÃO"

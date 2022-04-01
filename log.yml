@@ -2,10 +2,7 @@
 ---
 - hosts: all
   tasks:
-    - name: Consulta log
-      command: sh /home/matheus/log.sh
-      register: data
-
-    - name: log
-      debug: 
-        var: data.stdout
+    - name: Wait until the string "completed" is in the file /tmp/foo before continuing
+      wait_for:
+        path: ~/test.log
+        search_regex: "Terminal em uso"

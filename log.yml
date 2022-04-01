@@ -1,0 +1,11 @@
+
+---
+- hosts: all
+  tasks:
+    - name: Consulta log
+      command: sh /home/matheus/log.sh
+      register: data
+
+    - name: log
+      debug: 
+        var: data.stdout

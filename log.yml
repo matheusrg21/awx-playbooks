@@ -2,15 +2,25 @@
 ---
 - hosts: all
   tasks:
-    - name: Wait until the string "completed" is in the file /tmp/foo before continuing
-      wait_for:
-        path: ~/test.log
-        search_regex: "Terminal em uso$"
+    #- name: Wait until the string "completed" is in the file /tmp/foo before continuing
+      #wait_for:
+      #  path: ~/test.log
+     #   search_regex: "Terminal em uso$"
 
     
-    - name: Wait feel seconds
-      pause:
-        seconds: 5
+    #- name: Wait feel seconds
+      #pause:
+        #seconds: 5
 
+    #- debug:
+        #msg: "TERMINAL EM MANUTENÇÃO"
+
+    - name: Retry a task until a certain condition is met
+      ansible.builtin.shell: tail -f /home/matheus/test.log
+      register: result
+      until: result.stdout.find("Terminal em uso") != -1
+      retries: 5
+      delay: 10
+      
     - debug:
-        msg: "TERMINAL EM MANUTENÇÃO"
+        msg: "Terminal em uso"

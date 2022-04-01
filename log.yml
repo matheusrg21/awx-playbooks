@@ -6,3 +6,11 @@
       wait_for:
         path: ~/test.log
         search_regex: "Terminal em uso"
+
+    
+    - name: Wait feel seconds
+      pause:
+        seconds: 5
+
+    - debug:
+        msg: "TERMINAL EM MANUTENÇÃO"

@@ -15,9 +15,21 @@
       register: result
       async: 50
       poll: 0
-      
+    
+    - name: Wait for asynchronous job to end
+      async_status:
+        jid: '{{ result.ansible_job_id }}'
+      register: job_result
+      until: job_result.finished
+      retries: 10
+      delay: 1
+
     - debug:
         msg: "RESULT_OBJ {{ result }} "
+        
+    
+    - debug:
+        msg: "JOB_RESULT_OBJ {{ job_result }} "
 
     - debug:
         msg: "TERMINAL EM MANUTENÇÃO"

@@ -13,7 +13,7 @@
       poll: 0
 
     - debug:
-        msg: "Conteudo do arquivo: {{ result.stdout }} "
+        msg: "Conteudo do arquivo: {{ result }} "
       until: result.fineshed
       retries: 20
       delay: 2

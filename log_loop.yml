@@ -2,26 +2,18 @@
 - hosts: all
   gather_facts: no
   tasks:
-    - set_fact:
-        output: { "stdout": "" }
-
-    - name: Retry a task until a certain condition is met
-      command: tail -n 1 /home/matheus/test.log
-      async: 50
-      poll: 0
-      ignore_errors: yes
+    - name: Lendo arquivo
+      command: "tail -n1 {{ item }}"
+      loop:
+        -  /home/matheus/test.log
+        -  /home/matheus/test.log
+        -  /home/matheus/test.log
+        -  /home/matheus/test.log
+        -  /home/matheus/test.log
+      loop_control:
+        pause: 2
       register: result
-        
-    - name: 
-      async_status: jid="{{ result.ansible_job_id }}"
-      register: output
-      until: result.stdout.find("Terminal livre") != -1
-      retries: 20
-      delay: 2
 
-    - debug:
-        msg: "Conteudo do arquivo: {{ output }} "
-        
     - debug:
         msg: "TERMINAL EM MANUTENÇÃO"
       when: result is succeeded

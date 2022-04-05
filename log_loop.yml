@@ -10,6 +10,15 @@
       retries: 20
       delay: 2
       ignore_errors: yes
+      async: 50
+      pool: 0
+
+    - debug:
+        msg: "Conteudo do arquivo: {{ result.stdout }} "
+      until: result.fineshed
+      retries: 20
+      delay: 2
+      
     
     - debug:
         msg: "TERMINAL EM MANUTENÇÃO"

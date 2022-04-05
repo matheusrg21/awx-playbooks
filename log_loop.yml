@@ -6,7 +6,7 @@
         output: { "stdout": "" }
 
     - name: Retry a task until a certain condition is met
-      command: tail -f /home/matheus/test.log
+      command: tail -n 1 /home/matheus/test.log
       async: 50
       poll: 0
       ignore_errors: yes

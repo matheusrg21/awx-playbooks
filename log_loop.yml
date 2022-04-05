@@ -14,7 +14,7 @@
 
     - debug:
         msg: "Conteudo do arquivo: {{ result }} "
-      until: result.fineshed
+      until: result.finished
       retries: 20
       delay: 2
       

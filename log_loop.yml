@@ -18,7 +18,10 @@
     
     - name: Wait for asynchronous job to end
       async_status:
-        jid: '{{ result.ansible_job_id }}'
+        jid: '{{ result_item.ansible_job_id }}'
+      loop: "{{ result.results }}"
+      loop_control:
+        loop_var: "result_item"
       register: job_result
       until: job_result.finished
       retries: 10

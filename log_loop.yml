@@ -10,6 +10,7 @@
       ignore_errors: yes
       async: 50
       poll: 0
+      when: output is defined
       register: result
         
     - name: 

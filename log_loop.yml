@@ -13,7 +13,7 @@
       loop_control:
         pause: 2
       register: result
-      async: 5
+      async: 50
       poll: 0
       
     - debug:

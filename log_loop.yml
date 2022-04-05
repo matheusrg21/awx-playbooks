@@ -23,7 +23,7 @@
       delay: 2
 
     - debug:
-        msg: "Conteudo do arquivo: {{ result }} "
+        msg: "Conteudo do arquivo: {{ output }} "
         
     - debug:
         msg: "TERMINAL EM MANUTENÇÃO"

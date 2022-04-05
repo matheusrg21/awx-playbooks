@@ -13,6 +13,11 @@
       loop_control:
         pause: 2
       register: result
+      async: 5
+      poll: 2
+      
+    - debug:
+        msg: "RESULT_OBJ {{ result }} "
 
     - debug:
         msg: "TERMINAL EM MANUTENÇÃO"

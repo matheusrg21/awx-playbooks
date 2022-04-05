@@ -11,15 +11,17 @@
       async: 50
       poll: 0
       register: result
+        
+    - name: 
+      async_status: jid="{{ result.ansible_job_id }}"
+      register: output
+      until: output.finished
+      retries: 20
+      delay: 2
 
     - debug:
         msg: "Conteudo do arquivo: {{ result }} "
-      register: output
-      #until: output.finished
-      #retries: 20
-      #delay: 2
-      
-    
+        
     - debug:
         msg: "TERMINAL EM MANUTENÇÃO"
       when: result is succeeded

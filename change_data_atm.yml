@@ -1,0 +1,39 @@
+---
+- hosts: all
+  tasks:
+    - name: hours
+      shell: echo "hours: {{ hours }}" > teste && cat teste
+      
+    - name: days
+      shell: echo "days: {{ days }}" >> teste && cat teste
+      
+    - name: terminal_number
+      shell: echo "terminal_number: {{ terminal_number }}" >> teste && cat teste
+      
+    - name: room_name
+      shell: echo "room_name: {{ room_name }}" >> teste && cat teste
+      
+    - name: simtc
+      shell: echo "simtc: {{ simtc }}" >> teste && cat teste
+      
+    - name: ip
+      shell: echo "ip: {{ ip }}" >> teste && cat teste
+      
+    - name: accessibility
+      shell: echo "accessibility: {{ accessibility }}" >> teste && cat teste
+      
+    - name: auxilio_emergencial
+      shell: echo "auxilio_emergencial: {{ auxilio_emergencial }}" >> teste && cat teste
+      
+    - name: fgts
+      shell: echo "fgts: {{ fgts }}" >> teste && cat teste
+      
+    - name: fgts_card
+      shell: echo "fgts_card: {{ fgts_card }}" >> teste && cat teste
+
+#     - name: hour
+#       debug:
+#         var: hour.stdout
+#     - name: day
+#       debug:
+#         var: day.stdout

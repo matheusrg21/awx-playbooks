@@ -2,7 +2,7 @@
 - hosts: all
   tasks:
     - name: hours
-      shell: echo "{{ hours }}" > teste && cat teste
+      shell: echo "hours {{ hours }}" > teste && cat teste
       when: hours != ''
       
     - name: days
@@ -10,35 +10,35 @@
       when: days != ''
       
     - name: terminal_number
-      shell: echo "terminal_number: {{ terminal_number }}" >> teste && cat teste
+      shell: echo "terminal_number {{ terminal_number }}" >> teste && cat teste
       when: terminal_number != ''
       
     - name: room_name
-      shell: echo "room_name: {{ room_name }}" >> teste && cat teste
+      shell: echo "room_name {{ room_name }}" >> teste && cat teste
       when: room_name != ''
       
     - name: simtc
-      shell: echo "simtc: {{ simtc }}" >> teste && cat teste
+      shell: echo "simtc {{ simtc }}" >> teste && cat teste
       when: simtc != ''
       
     - name: ip
-      shell: echo "ip: {{ ip }}" >> teste && cat teste
+      shell: echo "ip {{ ip }}" >> teste && cat teste
       when: ip != ''
       
     - name: accessibility
-      shell: echo "accessibility: {{ accessibility }}" >> teste && cat teste
+      shell: echo "accessibility {{ accessibility }}" >> teste && cat teste
       when: accessibility != ''
       
     - name: auxilio_emergencial
-      shell: echo "auxilio_emergencial: {{ auxilio_emergencial }}" >> teste && cat teste
+      shell: echo "auxilio_emergencial {{ auxilio_emergencial }}" >> teste && cat teste
       when: auxilio_emergencial != ''
       
     - name: fgts
-      shell: echo "fgts: {{ fgts }}" >> teste && cat teste
+      shell: echo "fgts {{ fgts }}" >> teste && cat teste
       when: fgts != ''
       
     - name: fgts_card
-      shell: echo "fgts_card: {{ fgts_card }}" >> teste && cat teste
+      shell: echo "fgts_card {{ fgts_card }}" >> teste && cat teste
       when: fgts_card != ''
 
 #     - name: hour

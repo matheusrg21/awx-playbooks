@@ -6,7 +6,7 @@
       when: hours != ''
       
     - name: days
-      shell: echo "days: {{ days }}" >> teste && cat teste
+      shell: echo "days {{ days }}" >> teste && cat teste
       when: days != ''
       
     - name: terminal_number

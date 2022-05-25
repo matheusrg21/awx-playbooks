@@ -2,11 +2,11 @@
 - hosts: all
   tasks:
     - name: Consulta dados
-      command: sh /home/matheus/consulta_dados.sh
+      command: sh /home/consulta_dados.sh
       register: data
     
     - name: Consulta Banco
-      command: sh /home/matheus/busca_banco.sh
+      command: sh /home/busca_banco.sh
       register: data_banco
       
     - name: dados

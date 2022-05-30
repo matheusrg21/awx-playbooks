@@ -3,9 +3,9 @@
   tasks:
     - name: Consulta Numero Terminal
       debug:
-        msg: "{{ lookup('file', 'teste') }}"
+        msg: "{{ lookup('file', '/home/teste') }}"
     
     - name: Consulta IP Terminal
       debug:
-        msg: "{{ lookup('file', 'teste2') }}"
+        msg: "{{ lookup('file', '/home/teste2') }}"
           

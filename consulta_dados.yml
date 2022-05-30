@@ -1,6 +1,10 @@
 ---
 - hosts: all
   tasks:
+    - name: Consulta bd
+      command: 'sh /home/busca_banco.sh'
+      register: data
+
     - name: Consulta Numero Terminal
       set_fact:
         terminal_number: "12345"
@@ -19,3 +23,6 @@
              SIGML_OUTPUT { "terminal_number": { "value": {{ terminal_number }}, "type": "number", "label": "Número do Terminal"}
              } SIGML_OUTPUT
           
+    - name: show db
+      debug:
+        var: data

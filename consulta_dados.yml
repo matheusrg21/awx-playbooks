@@ -14,18 +14,12 @@
         var: data.stdout
     
     - name: Consulta Numero Terminal
-      vars: 
-        contents: "{{ lookup('file', 'teste') }}"
-      tasks:
-        debug:
-          msg: "{{ contents }}"
+      debug:
+        msg: "{{ lookup('file', 'teste') }}"
     
     - name: Consulta IP Terminal
-      vars: 
-        ip: "{{ lookup('file', 'teste2') }}"
-      tasks:
-        debug:
-          msg: "{{ ip }}"
+      debug:
+        msg: "{{ lookup('file', 'teste2') }}"
           
 
     - name: banco

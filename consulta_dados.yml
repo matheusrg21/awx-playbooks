@@ -1,18 +1,6 @@
 ---
 - hosts: all
   tasks:
-    - name: Consulta dados
-      command: sh /home/consulta_dados.sh
-      register: data
-    
-    - name: Consulta Banco
-      command: sh /home/busca_banco.sh
-      register: data_banco
-      
-    - name: dados
-      debug: 
-        var: data.stdout
-    
     - name: Consulta Numero Terminal
       debug:
         msg: "{{ lookup('file', 'teste') }}"
@@ -21,7 +9,3 @@
       debug:
         msg: "{{ lookup('file', 'teste2') }}"
           
-
-    - name: banco
-      debug: 
-        var: data_banco.stdout

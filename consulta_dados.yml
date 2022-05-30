@@ -8,5 +8,5 @@
 
     - name: Message
       debug:
-        msg: terminal_number
+        msg: "{{ terminal_number }}"
           

@@ -5,6 +5,8 @@
       set_fact:
         terminal_number: "12345"
         ip: "172.26.226.230"
+      debug:
+        msg: terminal_number
 
     - name: Message
       debug:

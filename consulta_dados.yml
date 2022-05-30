@@ -24,6 +24,5 @@
              'auxilio_emergencial': {'value': {{ auxilio_emergencial }}, 'type': 'boolean', 'label': 'Auxílio Emergencial'},
              'fgts_card': {'value': {{ fgts_card }}, 'type': 'boolean', 'label': 'FGTS sem Cartão'},
              'fgts': {'value': {{ fgts }}, 'type': 'boolean', 'label': 'FGTS'},
-             'hours': {'value': {{ hours }}, 'type': 'select', 'label': 'Horários'},
              } SIGML_OUTPUT
           

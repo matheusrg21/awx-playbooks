@@ -5,10 +5,8 @@
       set_fact:
         terminal_number: "12345"
         ip: "172.26.226.230"
-      debug:
-        msg: terminal_number
 
     - name: Message
       debug:
-        msg: "terminal_number: { 'value': {{ terminal_number.stdout }}, 'type': 'number', 'label': 'Número do Terminal'}"
+        msg: terminal_number
           

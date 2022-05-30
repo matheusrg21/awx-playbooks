@@ -16,6 +16,6 @@
     - name: Message
       debug:
         msg: >-
-             SIGML_OUTPUT { "terminal_number": { "value": {{ terminal_number }}, "type": "number", "label": "Número do Terminal"},
+             SIGML_OUTPUT { "terminal_number": { "value": {{ terminal_number }}, "type": "number", "label": "Número do Terminal"}
              } SIGML_OUTPUT
           

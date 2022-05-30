@@ -2,10 +2,11 @@
 - hosts: all
   tasks:
     - name: Consulta Numero Terminal
+      set_fact:
+        terminal_number: "12345"
+        ip: "172.26.226.230"
+
+    - name: Message
       debug:
-        msg: "{{ lookup('file', '/tmp/teste.txt') }}"
-    
-    - name: Consulta IP Terminal
-      debug:
-        msg: "{{ lookup('file', '/tmp/teste2.txt') }}"
+        msg: "terminal_number: { 'value': {{ terminal_number.stdout }}, 'type': 'number', 'label': 'Número do Terminal'}"
           

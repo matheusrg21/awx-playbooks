@@ -5,8 +5,25 @@
       set_fact:
         terminal_number: "12345"
         ip: "172.26.226.230"
+        room_name: "PAE SNC CONGRESSO"
+        simtc: "false"
+        accessibility: "false"
+        auxilio_emergencial: "false"
+        fgts_card: "true"
+        fgts: "true"
+        
 
     - name: Message
       debug:
-        msg: "terminal_number: { 'value': {{ terminal_number }}, 'type': 'number', 'label': 'Número do Terminal'}"
+        msg: |
+             SIGML_OUTPUT { terminal_number: { 'value': {{ terminal_number }}, 'type': 'number', 'label': 'Número do Terminal'},
+             'room_name': {'value': {{ room_name }}, 'type': 'string', 'label': 'Nome da Sala'},
+             'ip': {'value': {{ ip }}, 'type': 'ip', 'label': 'Endereço IP'},
+             'simtc': {'value': {{ simtc }}, 'type': 'boolean', 'label': 'SIMTC'},
+             'accessibility': {'value': {{ accessbility }}, 'type': 'boolean', 'label': 'Acessibilidade'},
+             'auxilio_emergencial': {'value': {{ auxilio_emergencial }}, 'type': 'boolean', 'label': 'Auxílio Emergencial'},
+             'fgts_card': {'value': {{ fgts_card }}, 'type': 'boolean', 'label': 'FGTS sem Cartão'},
+             'fgts': {'value': {{ fgts }}, 'type': 'boolean', 'label': 'FGTS'},
+             'hours': {'value': {{ hours }}, 'type': 'select', 'label': 'Horários'},
+             } SIGML_OUTPUT
           

@@ -7,9 +7,9 @@
       command: echo 'ALTERA O BANCO'
 
     - name: Retry a task until a certain condition is met
-      command: tail -n 1 /home/matheus/test.log
+      command: tail -n 20 /home/matheus/test.log
       register: result
-      until: result.stdout is search("MANUTENCAO_LIBERADA")
+      until: result.stdout.find("MANUTENCAO_LIBERADA") != -1
       retries: 20
       delay: 2
       ignore_errors: yes

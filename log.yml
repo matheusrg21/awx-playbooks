@@ -2,13 +2,21 @@
 ---
 - hosts: all
   tasks:
+  
+    - name: Sinaliza Manutenção
+      command: echo 'ALTERA O BANCO'
+
     - name: Retry a task until a certain condition is met
       command: tail -n 1 /home/matheus/test.log
       register: result
-      until: result.stdout.find("Terminal livre") != -1
+      until: result.stdout.find("MANUTENCAO_LIBERADA") != -1
       retries: 20
       delay: 2
       ignore_errors: yes
+      
+    - name: Reboot
+      command: echo 'VOU REINICIAR'
+      when: result is succeeded
     
     - debug:
         msg: "TERMINAL EM MANUTENÇÃO"

@@ -17,7 +17,6 @@
       debug:
         msg: >-
              SIGML_OUTPUT { 
-             "style": {"colsize": "4"}, 
              "terminal_number": { "value": "{{ terminal_number }}", "type": "number", "label": "Número do Terminal", "maxlength": "3"},
              "room_name": {"value": "{{ room_name }}", "type": "string", "label": "Nome da Sala", "maxlength": "3", "disabled": "true"},
              "ip": {"value": "{{ ip }}", "type": "ip", "label": "Endereço IP"},

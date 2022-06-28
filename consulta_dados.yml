@@ -18,7 +18,7 @@
         msg: >-
              SIGML_OUTPUT { 
              "terminal_number": { "value": "{{ terminal_number }}", "type": "number", "label": "Número do Terminal", "maxlength": "3"},
-             "room_name": {"value": "{{ room_name }}", "type": "string", "label": "Nome da Sala", "maxlength": "3"},
+             "room_name": {"value": "{{ room_name }}", "type": "string", "label": "Nome da Sala"},
              "ip": {"value": "{{ ip }}", "type": "ip", "label": "Endereço IP", "disabled": "true"},
              "simtc": {"value": "{{ simtc }}", "type": "boolean", "label": "SIMTC"},
              "accessibility": {"value": "{{ accessibility }}", "type": "boolean", "label": "Acessibilidade"},

@@ -19,13 +19,15 @@
       when: result is succeeded
     
     - name: Reboot
-      command: echo 'VOU REINICIAR'
+      command: shutdown -r +1
+      async: 45
+      poll: 0
       when: result is succeeded
     
-    - debug:
-        msg: "TERMINAL EM MANUTENÇÃO"
-      when: result is succeeded
+#     - debug:
+#         msg: "TERMINAL EM MANUTENÇÃO"
+#       when: result is succeeded
     
-    - debug:
-        msg: "TERMINAL EM USO"
-      when: result is failed
+#     - debug:
+#         msg: "TERMINAL EM USO"
+#       when: result is failed

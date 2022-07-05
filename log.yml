@@ -19,7 +19,7 @@
       when: result is succeeded
     
     - name: Reboot
-      command: shutdown -r +1
+      command: reboot
       async: 1
       poll: 0
       when: result is succeeded

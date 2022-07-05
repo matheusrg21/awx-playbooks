@@ -5,9 +5,15 @@
   
     - name: Sinaliza Manutenção
       command: echo 'ALTERA O BANCO'
+    
+    - name: Pegar horario
+      shell: date '+%Y-%m-%d %H:%M'
+      args:
+        warn: false
+      register: hr_local
 
-    - name: Retry a task until a certain condition is met
-      command: tail -n 20 /home/matheus/test.log
+    - name: Verificando Liberação da Aplicação
+      shell: grep -A 50000 -a "{{ hr_local.stdout }}" opt/foton/log/ExtraCash.log| grep -a "MANUTENCAO_LIBERADA"
       register: result
       until: result.stdout.find("MANUTENCAO_LIBERADA") != -1
       retries: 20

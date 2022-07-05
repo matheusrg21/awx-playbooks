@@ -20,7 +20,7 @@
     
     - name: Reboot
       command: reboot
-      async: 1
+      async: 5
       poll: 0
       when: result is succeeded
     

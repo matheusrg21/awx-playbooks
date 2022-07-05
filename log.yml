@@ -20,7 +20,7 @@
     
     - name: Reboot
       command: shutdown -r +1
-      async: 45
+      async: 1
       poll: 0
       when: result is succeeded
     

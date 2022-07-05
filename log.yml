@@ -13,7 +13,7 @@
       register: hr_local
 
     - name: Verificando Liberação da Aplicação
-      shell: grep -A 50000 -a "{{ hr_local.stdout }}" opt/foton/log/ExtraCash.log| grep -a "MANUTENCAO_LIBERADA"
+      shell: grep -A 50000 -a "{{ hr_local.stdout }}" /home/matheus/test.log | grep -a "MANUTENCAO_LIBERADA"
       register: result
       until: result.stdout.find("MANUTENCAO_LIBERADA") != -1
       retries: 20

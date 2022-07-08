@@ -2,7 +2,7 @@
 - hosts: all
   task: 
     - name: Busca texto
-      shell: grep -A -a '2022-06-22 11:30:18' /home/matheus/test.log |grep -ao 'Estado Manutencao: MANUTENCAO_REOMOTA'
+      shell: grep -A -a '2022-06-22 11:30:18' /home/matheus/test.log |grep -ao 'Estado Manutencao{{':'}} MANUTENCAO_REOMOTA'
       args:
         executable: /bin/bash
         warn: false

@@ -9,4 +9,4 @@
       register: result
       ignore_errors: yes
     - debug:
-        msg: result.stdout
+        msg: {{ result.stdout }}

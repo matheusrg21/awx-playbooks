@@ -17,6 +17,13 @@
       debug:
         msg: >-
              SIGML_OUTPUT { 
-             "room_name": {"value": "{{ room_name }}", "type": "string", "label": "Nome da Sala"}
+             "terminal_number": { "value": "{{ terminal_number }}", "type": "number", "label": "Número do Terminal", "maxlength": "5"},
+             "room_name": {"value": "{{ room_name }}", "type": "string", "label": "Nome da Sala"},
+             "ip": {"value": "{{ ip }}", "type": "ip", "label": "Endereço IP", "disabled": "true"},
+             "simtc": {"value": "{{ simtc }}", "type": "boolean", "label": "SIMTC"},
+             "accessibility": {"value": "{{ accessibility }}", "type": "boolean", "label": "Acessibilidade"},
+             "auxilio_emergencial": {"value": "{{ auxilio_emergencial }}", "type": "boolean", "label": "Auxílio Emergencial"},
+             "fgts_card": {"value": "{{ fgts_card }}", "type": "boolean", "label": "FGTS sem Cartão"},
+             "fgts": {"value": "{{ fgts }}", "type": "boolean", "label": "FGTS"}
              } SIGML_OUTPUT
           

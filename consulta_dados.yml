@@ -11,7 +11,6 @@
         auxilio_emergencial: "false"
         fgts_card: "true"
         fgts: "true"
-      when: user_answer == 'sim'
         
 
     - name: Message
